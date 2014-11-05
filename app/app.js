@@ -1,12 +1,20 @@
-'use strict';
+(function(){
+	'use strict';
 
-// Declare app level module which depends on views, and components
-angular.module('myApp', [
-  'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version'
-]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/view1'});
-}]);
+	// Declare app level module which depends on views, and components
+	angular
+		.module('IdleEmpire', [
+		  'ngRoute',
+		  'IdleEmpire.view1',
+		  'IdleEmpire.view2',
+		  'IdleEmpire.version'])
+    .config(RouteConfig);
+
+	RouteConfig.$inject('$routeProvider');
+
+	function RouteConfig($routeProvider){
+		$routeProvider.otherwise({redirectTo: '/view1'});
+	}
+
+})();
+

@@ -1,14 +1,26 @@
-'use strict';
 
-angular.module('myApp.view1', ['ngRoute'])
+(function(){
+	'use strict';
 
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {
-    templateUrl: 'view1/view1.html',
-    controller: 'View1Ctrl'
-  });
-}])
+	angular
+		.module('IdleEmpire.view1', ['ngRoute'])
+  	.config(RouteConfig)
+  	.controller('View1Ctrl', View1Ctrl);
 
-.controller('View1Ctrl', [function() {
+  RouteConfig.$inject = ['$routeProvider'];
 
-}]);
+	function View1Ctrl() {
+    /* jshint validthis: true */
+    var vm = this;
+
+    vm.ControllerNo = 1;
+	}
+
+	function RouteConfig($routeProvider) {
+		$routeProvider.when('/view1', {
+        templateUrl: 'view1/view1.html',
+		    controller: 'View1Ctrl',
+		    controllerAs: 'vm'
+	  	});
+	}
+})();

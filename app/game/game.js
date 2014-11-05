@@ -1,27 +1,20 @@
-// Game
-angular
-    .module('idleEmpire.model')
-    .factory('Game', Game);
+(function() {
+    'use strict';
 
-function Game() {
+    angular
+        .module('IdleEmpire.model')
+        .factory('Game', Game);
 
-	var someValue = 'Awesome!';
-	
-	var game = {
-		save: save,
-		someValue: someValue,
-		validate: validate
-	};
+    function Game() {
+        var service = {
+            save: save
+        };
+        return service;
 
-	return game;
+        ////////////////
 
-	////////////
-
-	function save() {
-
-	};
-
-	function validate {
-
-	};
-}
+        function save() {
+        	/* */
+        }
+    }
+})();

@@ -1,14 +1,25 @@
-'use strict';
+(function(){
+	'use strict';
 
-angular.module('myApp.view2', ['ngRoute'])
+	angular
+		.module('IdleEmpire.view2', ['ngRoute'])
+  	.config(RouteConfig)
+  	.controller('View2Ctrl', View2Ctrl);
 
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view2', {
-    templateUrl: 'view2/view2.html',
-    controller: 'View2Ctrl'
-  });
-}])
+  RouteConfig.$inject = ['$routeProvider'];
 
-.controller('View2Ctrl', [function() {
+	function View2Ctrl() {
+	    /* jshint validthis: true */
+	    var vm = this;
+	    
+	    vm.ControllerNo = 2;
+	}
 
-}]);
+	function RouteConfig($routeProvider) {
+		$routeProvider.when('/view2', {
+        templateUrl: 'view2/view2.html',
+		    controller: 'View2Ctrl',
+		    controllerAs: 'vm'
+	  	});
+	}
+})();
