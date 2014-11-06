@@ -1,23 +1,18 @@
 'use strict';
 
-describe('IdleEmpire.view1 module', function() {
+describe('In IdleEmpire.view1 module...', function() {
 
   beforeEach(module('IdleEmpire.view1'));
 
-  describe('view1 controller', function(){
+  describe('View1 Controller', function(){
 
-    it('should ....', inject(function($controller) {
+    it('should exist', inject(function($controller) {
       //spec body
       var view1Ctrl = $controller('View1Ctrl');
       expect(view1Ctrl).toBeDefined();
-
-      it('should have a ControllerNo equal to 1', function() {
-        expect(view1Ctrl.ControllerNo).toBe(1);
-      });
-
     }));
 
-    describe('View1Ctrl...', function(){
+    describe('as View1Ctrl', function(){
 
       var view1Ctrl;
 
